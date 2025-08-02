@@ -1,11 +1,79 @@
 // THEME COLORS
 $indigo: #368f8b;
 $blue: #005082;
-$orange: #2b303a;
-$footer: #eee5e9;
+$orange: #e3aa55;
+$white: white;
+$dark: black;
 
 $primary: $indigo;
 $secondary: $blue;
+$warning: $orange;
+$footer: $blue;
+
+.wave-fill {
+  fill: $orange;
+}
+.wave-alt-fill {
+  fill: $white;
+}
+
+#about-me {
+  background-color: $orange;
+}
+
+.intro-cards {
+  min-height: 25vh;
+  display: flex;
+  align-items: center;
+}
+
+.flip-card {
+  background-color: transparent;
+  perspective: 1000px;
+
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+
+  &:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    padding: 1rem;
+    font-size: 1.25rem;
+    color: white;
+  }
+
+  .flip-card-front {
+    background: $orange;
+  }
+
+  .flip-card-back {
+    background: darken($orange, 10%);
+    transform: rotateY(180deg);
+  }
+}
+
+.tab-content {
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
 
 // ACCORDION OVERRIDES
 $accordion-padding-y: 1.5rem;
@@ -14,6 +82,18 @@ $accordion-icon-color: $primary;
 $accordion-icon-active-color: $secondary;
 $accordion-button-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-color}'><path fill-rule='evenodd' d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z'/> <path d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/></svg>");
 $accordion-button-active-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-active-color}'><path fill-rule='evenodd' d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z'/>  <path d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/></svg>");
+
+$card-border-radius: 1rem;
+$card-border-color: $primary;
+$card-border-width: 0.25rem;
+
+.navbar-dark .navbar-nav .nav-link {
+  color: $orange !important;
+  &:hover,
+  &.active {
+    color: $warning !important;
+  }
+}
 
 @import "bootstrap/scss/bootstrap.scss";
 @import "bootstrap-icons/font/bootstrap-icons.scss";

@@ -4,7 +4,7 @@
 .testimonials {
   position: relative;
   padding: 0;
-  @include gradient;
+  background-color: $warning;
 
   &__card {
     background-color: rgba($white, 0.8);
