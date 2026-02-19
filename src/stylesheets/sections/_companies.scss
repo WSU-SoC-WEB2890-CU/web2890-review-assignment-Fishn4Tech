@@ -1,8 +1,8 @@
-@use '../custom'as *;
+@use "../custom" as *;
 
 .companies {
   margin-top: -1px;
-  background: $white;
+
   padding: 0 0 5rem 0;
 
   &__logo-box {
